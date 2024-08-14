@@ -2,86 +2,38 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "action": {
+        "service": {
             "type": "string",
-            "default": "/navigate_to_pose"
+            "default": "/move_to_pose"
         },
         "args": {
             "type": "object",
             "properties": {
-                "pose": {
-                    "type": "object",
-                    "properties": {
-                        "position": {
-                            "type": "object",
-                            "properties": {
-                                "x": {
-                                    "type": "number",
-                                    "min": -100,
-                                    "max": 100
-                                },
-                                "y":{
-                                    "type": "number",
-                                    "min": -100,
-                                    "max": 100
-                                },
-                                "z": {
-                                    "type": "number",
-                                    "min": -10,
-                                    "max": 10
-                                }
-                            },
-                            "required": [
-                                "x",
-                                "y",
-                                "z"
-                            ]
-                        },
-                        "orientation": {
-                            "type": "object",
-                            "properties": {
-                                "x": {
-                                    "type": "number",
-                                    "min": -1.0,
-                                    "max": 1.0
-                                },
-                                "y": {
-                                    "type": "number",
-                                    "min": -1.0,
-                                    "max": 1.0
-                                },
-                                "z": {
-                                    "type": "number",
-                                    "min": -1.0,
-                                    "max": 1.0
-                                },
-                                "w": {
-                                    "type": "number",
-                                    "min": -1.0,
-                                    "max": 1.0
-                                }
-                            },
-                            "required":[
-                                "x",
-                                "y",
-                                "z",
-                                "w"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "position",
-                        "orientation"
-                    ]
+                "x": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 10
+                },
+                "y": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 10
+                },
+                "theta": {
+                    "type": "number",
+                    "min": -3.14,
+                    "max": 3.14
                 }
             },
             "required": [
-                "pose"
+                "x",
+                "y",
+                "theta"
             ]
         }
     },
     "required": [
-        "action",
+        "service",
         "args"
     ]
 }
